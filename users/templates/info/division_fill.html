@@ -1,0 +1,57 @@
+{%extends 'info/base.html' %}
+{%load staticfiles%}
+{%block content%}
+                    <img src="{% static 'images/symbol.jpg' %}" style="position: relative;top: 40px;left: 580px; height: 150px;width: 150px;">
+                    
+                        <form action="division_fill" method="get">
+                            <div id="lab"><label for="zone">Zone</label>
+                            <select id="zn" name="zone">
+				                {%for i,j in zone_list%}
+                                    <option value={{i}}>{{j}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                        <div id="lab" style="margin-top: 5%;"><label for="division">Division</label>
+                            <select id="dvn" name="division">
+                                {%for i,j in division_list%}
+                                    <option value={{i}}>{{j}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                        <input type="submit" value="Submit">
+                        
+
+{%endblock%}
+
+{%block cardcontent%}
+<h4>Zone Details</h4>
+      </header>
+      <div class="w3-container">
+          <span style="margin-left: 5%;font-style:italic;">Division :<input type="text" id="header-2" name="para-1" disabled style="background-color:white;width:70%;border:0px solid white;margin:1% 1% 1% 1%;color:black;"></span><br/>
+          <span style="margin-left: 5%;font-style:italic;">Zone :<input type="text" id="header-3" name="para-1" disabled style="background-color:white;width:70%;border:0px solid white;margin:1% 1% 1% 1%;color:black;"></span><br/>
+          <span style="margin-left: 5%;font-style:italic;">Area :<input type="text" id="para" name="para-2" disabled style="background-color:white;width:70%;border:0px solid white;margin:1% 1% 1% 1%;color:black;"></span><br/>
+          <span style="margin-left: 5%;font-style:italic;">Number Of Dumps: <input type="text" id="para-2" name="para-3" disabled style="background-color:white;width:50%;border:0px solid white;margin:1% 1% 1% 1%;color:black;"></span><br/>
+          <span style="margin-left: 5%;font-style:italic;">Number Of Cans:<input type="text" id="header-2" name="para-1" disabled style="background-color:white;width:50%;border:0px solid white;margin:1% 1% 1% 1%;color:black;"></span><br/>
+
+      </div>
+
+{%endblock%}
+
+
+{%block script_fn%}
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+	    var modal = document.getElementById('id01');
+	    {%for i,j,k,l,m,n in division%}   
+		          $(".w3-container #header-2").val("{{j}}");
+                  $(".w3-container #header-3").val("{{n}}");
+		          $(".w3-container #para").val("{{k}}");
+                  $(".w3-container #para-2").val("{{l}}");
+                  $(".w3-container #header-2").val("{{m}}");
+	              modal.style.display = "block";  
+{%endfor%}
+});
+</script>
+
+{%endblock%}

@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Corporation Of Chennai</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/main_admin.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    </head>
+    
+    
+    <body>
+        
+        <ul>
+            <li><img src="{% static 'images/download.jpg' %}"></li>
+            <li><img src="{% static 'images/image.jpg' %}" style="width: 119%;"></li>
+        </ul>
+        
+        <div class="news">
+            <div class="w3-sidebar w3-bar-block w3-animate-left w3-light-grey" style="display:none;z-index:5;width:225px;font-style: italic;font-weight: bold;" id="mySidebar">
+                <a href="zone.html" class="w3-bar-item w3-button w3-light-grey" ><i class="fa fa-sticky-note-o"></i>Zone Details</a>
+            <a href="division.html" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-sticky-note-o"></i>Division Details</a>
+            <a href="official-login.html" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-vcard-o"></i>Official Login</a>
+            <a href="sign-in.html" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-user-circle-o"></i>User login</a>
+            <a href="sign-up.html" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-user-plus"></i>User Sign-Up</a>
+            <a href="complaint.html" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-pencil-square-o"></i>Register Complaint</a>
+            <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-trash-o"></i>Garbage Report</a>
+            </div>
+
+<!-- Page Content -->
+            <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+            <div class="bt">
+                <button class="w3-button w3-white w3-medium" onclick="w3_open()">&#9776;</button>
+            </div>
+            
+            <div class="bar" style="width: 80%;"><marquee behavior="scroll" direction="left">NEWS: HTML scrolling text... </marquee></div>
+            
+              <div clss="tg" style="height=32px;">
+                {%if val1%}<ul><li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" style="width: 150%">{{site}} &nbsp &nbsp &nbsp  <i class="fa fa-user-circle-o" style="font-size: 24px;"></i></a>
+    <div class="dropdown-content">
+      <a href="user_site">User Profile</a>
+      <a href="signout">Log Out</a>
+    </div>
+                </li></ul>
+                {%elif val2%}<ul><li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" style="width: 150%">{{site}} &nbsp &nbsp &nbsp  <i class="fa fa-user-circle-o" style="font-size: 24px;"></i></a>
+    <div class="dropdown-content">
+      <a href="employee_site">Employee Profile</a>
+      <a href="signout">Log Out</a>
+    </div>
+                </li></ul>
+                {%else%}<div class="bl" style="padding-top: 0.5%;font-style: italic; font-weight: bold;">{{site}}</div>{%endif%}</div>
+</div>
+        
+            <div class="main" style="background-image: url('{% static 'images/ripon.jpg' %}');">
+                <div class="fm">
+                {% block content%}
+                {% endblock%}
+                </div>
+        </div>
+        
+        
+         <div id="id01" class="w3-modal" >
+    <div class="w3-modal-content w3-card-4" style="width: 400px;">
+      <header class="w3-container w3-teal" style="height: 55px;"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+          {% block card_content%}
+          {%endblock%}
+        </div></div>
+             
+                
+        <script>
+            var modal = document.getElementById('id01');
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <script>
+            function w3_open() 
+            {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+            function w3_close() 
+            {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        </script>
+    </body>
+</html>

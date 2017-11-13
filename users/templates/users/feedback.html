@@ -1,0 +1,26 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                    <form name="form01" action="feedback_form" method="post">
+                       {%csrf_token%}
+                        <div id="lab"><label for="email">Email* : </label>
+                            <span><input type="text" id="email" name="email" placeholder="Your Email.." style="margin-top:-25px;"></span>
+                        </div>
+                        
+                        <div id="lab" style="margin-top:5%;"><label for="email">Satisfaction Level : </label><br/><br/>
+                           <span>
+	<input type="radio" name="satisfaction" value="Excellent"> Excellent  &nbsp
+  <input type="radio" name="satisfaction" value="Very Good"> Very Good &nbsp
+  <input type="radio" name="satisfaction" value="Good"> Good &nbsp
+<input type="radio" name="satisfaction" value="Bad"> Bad &nbsp
+<input type="radio" name="satisfaction" value="Very Bad"> Very Bad &nbsp
+</span>
+
+                        </div>
+
+			<div id="lab"><label for="suggest">Suggestion/Remarks* : </label><br/><br/>
+                           <span><textarea type="textarea" id="phone" name="suggest" placeholder="Suggestions/Remarks.." style="height:150px;width:100%;"></textarea></span>
+                        </div>
+      
+     <input type="submit" value="Submit">
+                    </form>
+               {%endblock%}

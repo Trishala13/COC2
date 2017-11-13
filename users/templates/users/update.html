@@ -1,0 +1,51 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                    <form name="form02" action="update_fill" method="post">
+                       {%csrf_token%}
+                        <div id="lab"><label for="fname">First Name* : </label>
+                            <span><input type="text" id="firstname" name="firstname" placeholder="Your name.." disabled></span>
+                        </div>
+      
+                        <div id="lab"><label for="lname">Last Name  : </label>
+                            <span><input type="text" id="lastname" name="lastname" placeholder="Your last name.." disabled></span>
+                        </div>
+                        
+                        <div id="lab"><label for="aadhar">Aadhar No.* : </label>
+                            <span><input type="text" id="aadhar" name="aadhar" placeholder="Your Aadhar Number.." disabled></span>
+                        </div>
+                        
+                        <div id="lab"><label for="password">Password* : </label>
+                            <span><input type="password" id="password" name="password" placeholder="Your password" ></span>
+                        </div>
+                        
+                        <div id="lab"><label for="email">E-mail* : </label>
+                           <span><input type="text" id="email" name="email" placeholder="Your email" style="margin-left:7%;" disabled></span>
+                        </div>
+
+			<div id="lab"><label for="Phone">Phone* : </label>
+                           <span><input type="text" id="phone" name="phone" placeholder="Your Phone Number.." style="margin-left:7%;"></span>
+                        </div>
+
+			<div id="lab"><label for="address">Address* : </label>
+                           <span><input type="text" id="address" name="address" placeholder="Your Address" style="margin-left:7%;"></span>
+                        </div>
+  
+                        <input type="submit" value="Update">
+                    </form>
+               {%endblock%}
+
+{%block script_fn%}
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		          $("#firstname").val("{{fname}}");
+        	          $("#lastname").val("{{lname}}");
+		          $("#aadhar").val("{{aadhar}}");
+        	          $("#password").val("{{password}}");
+	                  $("#email").val("{{mail}}");
+			  $("#phone").val("{{phone}}");
+    			  $("#address").val("{{address}}");
+});
+</script>
+
+{%endblock%}

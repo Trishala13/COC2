@@ -1,0 +1,42 @@
+{%extends 'info/base.html' %}
+{%load staticfiles%}
+{%block content%}
+                    <img src="{% static 'images/symbol.jpg' %}" style="position: relative;top: 40px;left: 580px; height: 150px;width: 150px;">
+                        <form action="zone_fill" method="get">
+                       <div id="lab"><label for="zone">Zone</label>
+                            <select id="zn" name="zone">
+				                {%for i,j in zone_list%}
+                                    <option value={{i}}>{{j}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                    <input type="submit" value="Submit">    
+</form>
+{%endblock%}
+
+{%block cardcontent%}
+<h4>Zone Details</h4>
+      </header>
+      <div class="w3-container">
+          <span style="margin-left: 5%;font-style:italic;">Zone :<input type="text" id="header-2" name="para-1" disabled style="background-color:white;width:70%;border:0px solid white;color:black;"></span><br/>
+          <span style="margin-left: 5%;font-style:italic;">Area :<input type="text" id="para" name="para-2" disabled style="background-color:white;width:70%;border:0px solid white;color:black;"></span><br/>
+          <span style="margin-left: 5%;font-style:italic;">Population: <input type="text" id="para-2" name="para-3" disabled style="background-color:white;width:70%;border:0px solid white;color:black;"></span><br/>
+      </div>
+
+{%endblock%}
+
+{%block script_fn%}
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+	    var modal = document.getElementById('id01');
+	    {%for i,j,k,l in zone%}
+		      $(".w3-container #header-2").val("{{j}}");
+		      $(".w3-container #para").val("{{k}}");
+              $(".w3-container #para-2").val("{{l}}");
+	          modal.style.display = "block";
+         {%endfor%}
+});
+</script>
+
+{%endblock%}

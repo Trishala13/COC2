@@ -1,0 +1,33 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                    <form name="form01" action="garbage_fill" method="get">
+                       {%csrf_token%}
+                       <div id="lab" style="margin-top: 5%;"><label for="division">Division</label>
+                            <select id="dvn" name="division">
+                                {%for i,j in division_list%}
+                                    <option value={{i}}>{{j}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+      
+                        <div id="lab"><label for="s_date">Start Date: </label>
+                            <span><input type="date" id="s_date" name="s_date">  </span>
+                        </div>
+                        
+                        <div id="lab"><label for="e_date">End Date: </label>
+                            <span><input type="date" id="e_date" name="e_date">  </span>
+                        </div>
+                        
+                        <div id="lab" style="margin-top: 5%;"><label for="vehicle">Vehicle Type:</label>
+                            <select id="vehicle" name="vehicle">
+                                {%for i in vehicle_list%}
+                                    <option value={{i}}>{{i}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                        
+                       
+  
+                        <input type="submit" value="Sign-Up">
+                    </form>
+               {%endblock%}

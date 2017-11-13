@@ -1,0 +1,16 @@
+{%extends 'info/base.html' %}
+{%load staticfiles%}
+{%block content%}
+                    <img src="{% static 'images/symbol.jpg' %}" style="position: relative;top: 40px;left: 580px; height: 150px;width: 150px;">
+                                            <form action="zone_fill" method="get">
+                       <div id="lab"><label for="zone">Zone</label>
+                            <select id="zn" name="zone">
+				                {%for i,j in zone_list%}
+                                    <option value={{i}}>{{j}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                    <input type="submit" value="Submit">    
+</form>
+{%endblock%}
+

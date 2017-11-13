@@ -1,0 +1,35 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                    <form name="form01" action="sign_up_form" method="post">
+                       {%csrf_token%}
+                        <div id="lab"><label for="fname">First Name* : </label>
+                            <span><input type="text" id="firstname" name="firstname" placeholder="Your name.."></span>
+                        </div>
+      
+                        <div id="lab"><label for="lname">Last Name  : </label>
+                            <span><input type="text" id="lastname" name="lastname" placeholder="Your last name.."></span>
+                        </div>
+                        
+                        <div id="lab"><label for="aadhar">Aadhar No.* : </label>
+                            <span><input type="text" id="aadhar" name="aadhar" placeholder="Your Aadhar Number.."></span>
+                        </div>
+                        
+                        <div id="lab"><label for="password">Password* : </label>
+                            <span><input type="password" id="password" name="password" placeholder="Your password"></span>
+                        </div>
+                        
+                        <div id="lab"><label for="email">E-mail* : </label>
+                           <span><input type="text" id="email" name="email" placeholder="Your email" style="margin-left:7%;"></span>
+                        </div>
+
+			<div id="lab"><label for="Phone">Phone* : </label>
+                           <span><input type="text" id="phone" name="phone" placeholder="Your Phone Number.." style="margin-left:7%;"></span>
+                        </div>
+
+			<div id="lab"><label for="address">Address* : </label>
+                           <span><input type="text" id="address" name="address" placeholder="Your Address" style="margin-left:7%;"></span>
+                        </div>
+  
+                        <input type="submit" value="Sign-Up">
+                    </form>
+               {%endblock%}

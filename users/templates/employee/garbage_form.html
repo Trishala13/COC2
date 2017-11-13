@@ -1,0 +1,31 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                    <form name="form01" action="garbage_form_fill" method="get">
+                       {%csrf_token%}
+                       <div id="lab" style="margin-top: 5%;"><label for="division">Division</label>
+                            <select id="dvn" name="division">
+                                {%for i,j in division_list%}
+                                    <option value={{i}}>{{j}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+      
+                        <div id="lab"><label for="s_date">Date collected: </label>
+                            <span><input type="date" id="s_date" name="s_date">  </span>
+                        </div>
+                       
+                       <div id="lab"><label for="num_trip">Enter number of trips* : </label>
+                           <span><input type="text" id="email" name="num_trip" placeholder="Enter number of trips.." style="margin-left:7%;"></span>
+                        </div>
+
+<div id="lab"><label for="vehicle">Vehicle Registration No.* : </label>
+                           <span><input type="text" id="vehicle" name="vehicle" placeholder="Vehicle Registration Number.." style="margin-left:7%;"></span>
+                        </div>
+
+<div id="lab"><label for="amount">Amount collected* : </label>
+                           <span><input type="text" id="amount" name="amount" placeholder="Amount of garbage collected.." style="margin-left:7%;"></span>
+                        </div>
+
+                        <input type="submit" value="Sign-Up">
+                    </form>
+               {%endblock%}

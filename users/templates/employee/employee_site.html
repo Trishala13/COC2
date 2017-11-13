@@ -1,0 +1,23 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                    <a href="garbage_form"><button class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 47%;"> <i class="fa fa-pencil-square-o"></i>Garbage Report Entry</button>    </a>
+                <table>
+  <tr>
+    <th>Complaint ID</th>
+    <th>Department</th>
+      <th>Detail</th>
+    <th>Incharge_id</th>
+      <th>Division</th>
+      <th>Status</th>
+      <th>Action</th>
+  </tr>
+{% for complaint in complaint_list%}
+  <tr>
+	{%for x in complaint%}
+<td>{{x}}</td>
+    {%endfor%}
+  </tr>
+   {%endfor%}     
+</table>
+    
+{%endblock%}

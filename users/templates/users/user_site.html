@@ -1,0 +1,42 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 12%;"><i class="fa fa-pencil-square-o"></i>Update/Delete Profile</button>
+                    <a href="complaint.html"><button class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 47%;"> <i class="fa fa-pencil-square-o"></i>Register a complaint</button>    </a>
+                <table>
+  <tr>
+    <th>Complaint ID</th>
+    <th>Department</th>
+      <th>Detail</th>
+    <th>Incharge_id</th>
+      <th>Division</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Action</th>
+  </tr>
+{% for id,dept,detail,status,i_id,division,date,buttons,val in complaint_list%}
+  <tr>
+	<td>{{id}}</td><td>{{dept}}</td><td>{{detail}}</td><td>{{i_id}}</td><td>{{division}}</td><td>{{date}}</td><td>{{status}}</td>
+	{%if buttons %}
+		<td><a href={{buttons}}><button>{{val}}</button></a></td>
+	{%else %}
+		<td>No Action</td>
+	{%endif%}
+	
+  </tr>
+   {%endfor%}    
+</table>
+    
+{%endblock%}
+
+{%block card_content%}
+        <h8 style="padding:1% 1% 1% 1%;">Update/Delete Profile</h8>
+      </header>
+      <div class="w3-container">
+	<form action="update" method="post" style="width:100%;box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);margin-left:-5px;">
+                                               {%csrf_token%}
+        <div id="lab" style="margin-top:-7.5%;"><label for="Password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Your Password" >
+                        </div>
+                        <input type="submit" value="Submit">
+        </form>
+{%endblock%}

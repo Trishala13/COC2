@@ -1,0 +1,20 @@
+{%extends 'users/base.html' %}
+    {%block content%}
+                <table>
+  <tr>
+    <th>Division Id</th>
+    <th>Vehicle Id</th>
+      <th>Number Of Trips</th>
+    <th>Date Collected</th>
+      <th>Amount Collected</th>
+  </tr>
+	{% for garbage in garbage_list%}
+  <tr>
+	{%for x in garbage%}
+<td>{{x}}</td>
+    {%endfor%}
+  </tr>
+   {%endfor%}     
+</table>
+    
+{%endblock%}
