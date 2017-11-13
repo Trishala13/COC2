@@ -1,0 +1,20 @@
+{%extends 'admin_page/base.html' %}
+    {%block content%}
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 12%;"><i class="fa fa-pencil-square-o"></i>Back To Admin Page</button>
+                <table>
+  <tr>
+    <th>Zone ID</th>
+    <th>Zone Name</th>
+      <th>Area</th>
+    <th>Population</th>
+  </tr>
+{% for zone in zone_list%}
+  <tr>
+	{%for x in zone%}
+<td>{{x}}</td>
+    {%endfor%}
+  </tr>
+   {%endfor%}     
+</table>
+    
+{%endblock%}

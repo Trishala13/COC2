@@ -1,0 +1,23 @@
+{%extends 'admin_page/base.html' %}
+    {%block content%}
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 12%;"><i class="fa fa-pencil-square-o"></i>Back To Admin Page</button>
+                <table>
+  <tr>
+    <th>Complaint ID</th>
+    <th>Department</th>
+      <th>Detail</th>
+    <th>Incharge_id</th>
+      <th>Division</th>
+      <th>Status</th>
+      <th>Action</th>
+  </tr>
+{% for complaint in complaint_list%}
+  <tr>
+	{%for x in complaint%}
+<td>{{x}}</td>
+    {%endfor%}
+  </tr>
+   {%endfor%}     
+</table>
+    
+{%endblock%}

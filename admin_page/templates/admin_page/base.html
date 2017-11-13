@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html style="background-color:white">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Corporation Of Chennai</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/main_admin.css' %}">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+<script src="http://ajax.microsoft.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    </head>
+    
+    <body>
+		
+		<ul style="background-color: #111;">
+  <li><a href="home">Home</a></li>
+  <li><a class="active" href="admin_home">Admin Home</a></li>
+<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Zone</a>
+    <div class="dropdown-content">
+      <a href="add_zone">Add Zone</a>
+      <a href="update_zone">Update Zone</a>
+      <a href="view_zone">View Zone</a>
+    </div>
+  </li>
+
+<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Division</a>
+    <div class="dropdown-content">
+      <a href="add_division">Add Division</a>
+      <a href="update_division">Update Division</a>
+      <a href="view_division">View Division</a>
+    </div>
+  </li>
+
+<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Employee</a>
+    <div class="dropdown-content">
+      <a href="add_employee">Add Employee</a>
+      <a href="view_employee">View Employee</a>
+      <a href="update_employee">Update Employee</a>
+      <a href="delete_employee">Delete Employee</a>
+    </div>
+  </li>
+
+  <li><a href="user">User</a></li>
+  <li><a href="complaint">Complaint</a></li>
+  <li><a href="feedback">Feedback</a></li>
+</ul>
+
+    
+            <div class="main">
+                <div class="fm">
+                {% block content%}
+                {% endblock%}
+                </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{%extends 'admin_page/base.html' %}
+    {%block content%}
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 12%;"><i class="fa fa-pencil-square-o"></i>Back To Admin Page</button>
+                <table>
+  <tr>
+    <th>Division ID</th>
+    <th>Division Name</th>
+      <th>Area</th>
+    <th>Number Of Garbage Dumps</th>
+      <th>No. Of Garbage Cans</th>
+      <th>Zone</th>
+  </tr>
+{% for division in division_list%}
+  <tr>
+	{%for x in division%}
+<td>{{x}}</td>
+    {%endfor%}
+  </tr>
+   {%endfor%}     
+</table>
+    
+{%endblock%}

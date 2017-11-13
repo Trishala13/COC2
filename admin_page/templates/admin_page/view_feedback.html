@@ -1,0 +1,20 @@
+{%extends 'admin_page/base.html' %}
+    {%block content%}
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-indigo" style="margin-top: 2%;margin-left: 12%;"><i class="fa fa-pencil-square-o"></i>Back To Admin Page</button>
+                <table>
+  <tr>
+    <th>Feedback ID</th>
+    <th>Satisfaction Level</th>
+      <th>Suggestion/Remarks</th>
+    <th>Complaint ID</th>
+  </tr>
+{% for feedback in feedback_list%}
+  <tr>
+	{%for x in feedback%}
+<td>{{x}}</td>
+    {%endfor%}
+  </tr>
+   {%endfor%}     
+</table>
+    
+{%endblock%}
